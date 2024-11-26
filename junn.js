@@ -7454,14 +7454,14 @@ limitAdd(m.sender, limit)
 break
 
 // Group Menu
-case'afk':
+case'afk': case'slr' :
 if (isBan) return newReply('Lu di ban kocak awokwok') 
 
 if (isAfkOn) return newReply('Afk sudah diaktifkan sebelumnya')
 addCountCmd('#afk', m.sender, _cmd)
 let reason = text ? text : 'Nothing.'
 afk.addAfkUser(m.sender, Date.now(), reason, _afk)
-juna.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} sedang afk\nAlasan : ${reason}`, m)
+juna.sendTextWithMentions(m.chat, `@${m.sender.split('@')[0]} sedang afk/slow respon\nAlasan : ${reason}`, m)
 break
 case'welcome':
 if (isBan) return newReply('Lu di ban kocak awokwok') 
@@ -7928,7 +7928,7 @@ newReply(open)
 }, timer)
 }
 break
-case'open': case'buka':{
+case'op': case'buka':{
 if (isBan) return newReply('Lu di ban kocak awokwok') 
 if (!m.isGroup) return newReply('Fitur Khusus Group!')
 if (!isAdmins) return newReply('Fitur Khusus admin!')
@@ -8022,7 +8022,7 @@ case 'pengingat': {
   }, timer)
   }
 break
-case'close': case'tutup':
+case'cl': case'tutup':
 if (isBan) return newReply('Lu di ban kocak awokwok') 
 if (!m.isGroup) return newReply('Fitur Khusus Group!')
 if (!isAdmins) return newReply('Fitur Khusus admin!')
@@ -8140,7 +8140,7 @@ if (!isAdmins && !isCreator) return newReply('Lu siapa kocak?')
 juna.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: fkontak })
 }
 break
-case 'delete': case 'd': case 'del': {
+case 'delete': case 'dett': case 'del': {
 if (isBan) return newReply('Lu di ban kocak awokwok') 
 if (!m.quoted) throw false
 if (!isAdmins && !isCreator) return newReply('Fitur Khusus admin!')
