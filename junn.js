@@ -6158,13 +6158,13 @@ case 'list': case 'store':{
 if (isBan) return newReply('Lu di ban kocak awokwok') 
 if (db_respon_list.length === 0) return newReply(`Belum ada list message di database`)
 if (!isAlreadyResponListGroup(m.chat, db_respon_list)) return newReply(`Belum ada list message yang terdaftar di group ini`)
-let teks = `. ■ .═══════════════\nselamat ${ucapanWaktu} @${m.sender.split("@")[0]}\nberikut beberapa list yang tersedia di\n⌜ *${groupName}* ⌟\n${tanggal(new Date)}`
+let teks = `. ■ .═══════════════\nselamat ${ucapanWaktu} @${m.sender.split("@")[0]}\nberikut beberapa list yang tersedia di\n⌜ *${groupName}* ⌟\n${tanggal(new Date)}\n═══════════════════. ■ .\n       🅛🅘🅢🅣\n`
 for (let i of db_respon_list) {
 if (i.id === m.chat) {
-teks += `- ${i.key.toUpperCase()}\n`
+teks += `🔖 ${i.key.toUpperCase()}\n`
 }
 }
-teks += `\n\nUntuk melihat detail produk, silahkan kirim nama produk yang ada pada list di atas. Misalnya kamu ingin melihat detail produk dari ${db_respon_list[0].key.toUpperCase()}, maka kirim pesan ${db_respon_list[0].key.toUpperCase()} kepada bot`
+teks += `━━━━━━━━━━━━━━━━━ᯓ ✈︎\nUntuk melihat harga, silahkan ketik nama produk yang ada pada list Misalnya\n⌯ harga *netflix* , maka ketik *netflix*\n⌯ info pembayaran ketik *pay*\n\n> *ʙᴏᴛɢʀᴜᴘ cybotz* ━━━━━━━`
 juna.sendMessage(m.chat, {text: teks, mentions: [m.sender]}, {quoted:m}) 
 }
 break
