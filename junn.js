@@ -13930,7 +13930,7 @@ if (budy.match('Chiwa')) {
   juna.sendStickerFromUrl(m.chat, dino, m, {packname: `Created By ${setting.botName}\n${tanggal(new Date())}` , author: `Owner ${setting.ownerName}\nTime ${time}` })
 }
 
-if ((budy) && ["proses", "Proses",].includes(budy) && !isCmd) {
+if ((budy) && ["proses", "P",].includes(budy) && !isCmd) {
 if (!m.isGroup) return newReply('Fitur Khusus Group!')
 if (!isAdmins) return newReply('Fitur Khusus admin!')
 if (!m.quoted) return newReply('Reply pesanan yang akan proses')
@@ -13944,7 +13944,7 @@ juna.sendTextWithMentions(m.chat, anunya, m)
 juna.sendTextWithMentions(m.chat, (proses.replace('@pesanan', tek ? tek : '-').replace('@user', '@' + m.quoted.sender.split("@")[0]).replace('@jam', time).replace('@tanggal', tanggal(new Date())).replace('@user', '@' + m.quoted.sender.split("@")[0])), m)}
 }
 
-if ((budy) && ['done', "Done"].includes(budy) && !isCmd) {
+if ((budy) && ['d', "Done"].includes(budy) && !isCmd) {
 if (!m.isGroup) return newReply('Fitur Khusus Group!')
 if (!isAdmins) return newReply('Fitur Khusus admin!')
 if (!m.quoted) return newReply('Reply pesanan yang telah di proses')
