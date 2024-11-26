@@ -6158,7 +6158,7 @@ case 'list': case 'store':{
 if (isBan) return newReply('Lu di ban kocak awokwok') 
 if (db_respon_list.length === 0) return newReply(`Belum ada list message di database`)
 if (!isAlreadyResponListGroup(m.chat, db_respon_list)) return newReply(`Belum ada list message yang terdaftar di group ini`)
-let teks = `Halo @${m.sender.split("@")[0]} berikut beberapa list yang tersedia saat ini.\n\n`
+let teks = `. ■ .═══════════════\nselamat ${ucapanWaktu} @${m.sender.split("@")[0]}\nberikut beberapa list yang tersedia di\n⌜ *${groupName}* ⌟\n${tanggal(new Date)}`
 for (let i of db_respon_list) {
 if (i.id === m.chat) {
 teks += `- ${i.key.toUpperCase()}\n`
